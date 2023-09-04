@@ -1,9 +1,6 @@
 package ar.edu.unlu.poo.ListaPilasColas;
 
 public class Main {
-    public Main() {
-    }
-
     public static void main(String[] args) {
         ListaEnlazadaSimple lista = new ListaEnlazadaSimple();
         ListaEnlazadaDoble lista2 = new ListaEnlazadaDoble();
