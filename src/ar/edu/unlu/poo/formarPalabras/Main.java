@@ -1,7 +1,6 @@
 package ar.edu.unlu.poo.formarPalabras;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -27,12 +26,14 @@ public class Main {
 
         for(int i = 0; i < 3; ++i) {
             for(Jugador jugador:jugadores){
-                System.out.printf("Turno jugador \"%s\"\n.", jugador.getNombre());
+                System.out.printf("Turno jugador \"%s\".\n", jugador.getNombre());
                 String palabraIngresada = ingreso.nextLine();
                 Palabra palabra = jugador.generarPalabra(palabraIngresada.toLowerCase(), diccionario);
                 if (palabra != null) {
                     jugador.agregarPalabra(palabra);
                 } else {
+//Anotacion personal: cuando un jugador ingresa una palabra que no se encuentra en el diccionario, le informa que
+//la palabra no era valida y pierde el turno, por lo que no genera puntos a favor.
                     System.out.println("Palabra no valida.\n");
                 }
             }

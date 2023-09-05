@@ -18,7 +18,7 @@ public class Palabra {
         for(int i = 0; i < this.palabra.length(); ++i) {
             char letra = this.palabra.charAt(i);
             if (letra != 'w' && letra != 'k' && letra != 'z' && letra != 'y' && letra != 'q') {
-                ++total;
+                total++;
             } else {
                 total += 2;
             }
