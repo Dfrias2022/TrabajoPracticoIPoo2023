@@ -6,7 +6,7 @@ public class Palabra {
 
     public Palabra(String palabra) {
         this.palabra = palabra.toLowerCase();
-        this.puntaje = this.puntaje();
+        this.puntaje = puntaje();
     }
 
     public String getPalabra() {

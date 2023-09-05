@@ -11,10 +11,14 @@ public class Main {
         Scanner ingreso = new Scanner(System.in);
         Diccionario diccionario = new Diccionario();
         List<Jugador> jugadores = new ArrayList<>();
-        Jugador jugador1 = new Jugador("pepe");
-        Jugador jugador2 = new Jugador("ariel");
-        jugadores.add(jugador1);
-        jugadores.add(jugador2);
+        for(int i=1;i<3;i++){
+            String ingresoNombre;
+            System.out.println("[--CARGA DE 2 JUGADORES--]");
+            System.out.printf("Ingrese el nombre del jugador %s.\n",i);
+            ingresoNombre = ingreso.nextLine();
+            Jugador jugador = new Jugador(ingresoNombre);
+            jugadores.add(jugador);
+        }
         diccionario.agregarPalabra("programacion");
         diccionario.agregarPalabra("objetos");
         diccionario.agregarPalabra("universidad");
@@ -31,10 +35,11 @@ public class Main {
                 Palabra palabra = jugador.generarPalabra(palabraIngresada.toLowerCase(), diccionario);
                 if (palabra != null) {
                     jugador.agregarPalabra(palabra);
+                    System.out.printf("Puntaje de la palabra: %d\n",palabra.getPuntaje());
                 } else {
 //Anotacion personal: cuando un jugador ingresa una palabra que no se encuentra en el diccionario, le informa que
 //la palabra no era valida y pierde el turno, por lo que no genera puntos a favor.
-                    System.out.println("Palabra no valida.\n");
+                    System.out.println("Palabra no valida.");
                 }
             }
         }
@@ -48,6 +53,7 @@ public class Main {
             }
         }
         if(ganador !=null) {
+            System.out.println("[--SCORE--]");
             System.out.printf("%s - puntaje: %d\n", ((Jugador) jugadores.get(0)).getNombre(), ((Jugador) jugadores.get(0)).puntajeTotal());
             System.out.printf("%s - puntaje: %d\n", ((Jugador) jugadores.get(1)).getNombre(), ((Jugador) jugadores.get(1)).puntajeTotal());
             System.out.printf("El ganador fue el jugador %s con un total de %d puntos.\n", ganador.getNombre(), puntajeGanador);
