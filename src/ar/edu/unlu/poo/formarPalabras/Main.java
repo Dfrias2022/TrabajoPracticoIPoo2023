@@ -50,6 +50,8 @@ public class Main {
             if (sParcial > puntajeGanador) {
                 puntajeGanador = sParcial;
                 ganador = jugador;
+            }else if(sParcial == puntajeGanador){
+                ganador = null;
             }
         }
         if(ganador !=null) {
@@ -57,6 +59,8 @@ public class Main {
             System.out.printf("%s - puntaje: %d\n", ((Jugador) jugadores.get(0)).getNombre(), ((Jugador) jugadores.get(0)).puntajeTotal());
             System.out.printf("%s - puntaje: %d\n", ((Jugador) jugadores.get(1)).getNombre(), ((Jugador) jugadores.get(1)).puntajeTotal());
             System.out.printf("El ganador fue el jugador %s con un total de %d puntos.\n", ganador.getNombre(), puntajeGanador);
+        }else{
+            System.out.printf("[EMPATE] - Ambos jugadores obtuvieron el mismo puntaje %d.\n",puntajeGanador);
         }
     }
 }
