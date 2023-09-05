@@ -30,6 +30,7 @@ public class Main {
                 opcion = ingreso.nextInt();
             } else {
                 System.out.println("Valores numericos entre 0 y 8");
+                ingreso.nextLine();
             }
             String ingresoUsuario;
             switch (opcion) {
@@ -133,6 +134,7 @@ public class Main {
                         for(Tarea t:listaTareas) {
                             if (!t.estaCompleta() && !t.estaVencida()) {
                                 posiciones.add(pos);
+                                pos++;
                                 ntarea++;
                                 System.out.printf("(%d) %s\n", ntarea, t.devolverDescripcio());
                             }
@@ -194,12 +196,16 @@ public class Main {
                 case 6:
                     ingreso.nextLine();
                     System.out.println("Menu --> Listar todas las tareas en la lista.");
-                    for(Tarea t:listaTareas) {
-                        if (t.getColaborador() != null) {
-                            System.out.printf("TAREA: %s Fecha limite: %s Estado: %s Prioridad: %s Fecha recordatorio: %s Colaborador: %s Finalizacion: %s.\n", t.devolverDescripcio(), t.getFechaLimite(), t.getEstado(), t.getPrioridad(), t.getFechaRecordatorio(), t.getColaborador(), t.getFechaRealizacion());
-                        } else {
-                            System.out.printf("TAREA: %s Fecha limite: %s Estado: %s Prioridad: %s Fecha recordatorio: %s.\n", t.devolverDescripcio(), t.getFechaLimite(), t.getEstado(), t.getPrioridad(), t.getFechaRecordatorio());
+                    if(!listaTareas.isEmpty()) {
+                        for (Tarea t : listaTareas) {
+                            if (t.getColaborador() != null) {
+                                System.out.printf("TAREA: %s Fecha limite: %s Estado: %s Prioridad: %s Fecha recordatorio: %s Colaborador: %s Finalizacion: %s.\n", t.devolverDescripcio(), t.getFechaLimite(), t.getEstado(), t.getPrioridad(), t.getFechaRecordatorio(), t.getColaborador(), t.getFechaRealizacion());
+                            } else {
+                                System.out.printf("TAREA: %s Fecha limite: %s Estado: %s Prioridad: %s Fecha recordatorio: %s.\n", t.devolverDescripcio(), t.getFechaLimite(), t.getEstado(), t.getPrioridad(), t.getFechaRecordatorio());
+                            }
                         }
+                    }else{
+                        System.out.println("Lista de tareas vacia.");
                     }
                     break;
                 case 7:
