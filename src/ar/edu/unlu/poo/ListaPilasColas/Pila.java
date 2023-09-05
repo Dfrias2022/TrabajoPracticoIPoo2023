@@ -60,6 +60,6 @@ public class Pila {
                 nodoAux = nodoAux.getSiguiente();
             }
         }
-
+        System.out.println();
     }
 }

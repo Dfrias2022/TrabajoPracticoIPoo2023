@@ -38,5 +38,18 @@ public class Main {
         lista2.mostrarLista();
         lista2.eliminarElemento(1200);
         lista2.mostrarLista();
+        System.out.println("---Pila---");
+        pila.apilar(12);
+        pila.apilar(14);
+        pila.apilar(16);
+        pila.mostrarPila();
+        System.out.println("TOPE ACTUAL DE LA PILA: " + pila.getTope().getValor());
+        pila.desapilar();
+        pila.mostrarPila();
+        System.out.println("TOPE ACTUAL DE LA PILA: " + pila.getTope().getValor());
+        pila.desapilar();
+        pila.desapilar();
+        pila.desapilar();
+        System.out.println("TOPE ACTUAL DE LA PILA: " + pila.getTope());
     }
 }
