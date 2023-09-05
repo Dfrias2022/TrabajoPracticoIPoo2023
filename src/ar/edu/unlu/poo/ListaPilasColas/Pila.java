@@ -51,15 +51,16 @@ public class Pila {
     }
 
     public void mostrarPila() {
+        String listarPila = "";
         Nodo nodoAux = this.tope;
         if (this.tope == null) {
             System.out.println("Pila vacia.");
         } else {
             while(nodoAux != null) {
-                System.out.print(nodoAux.getValor() + " ");
+                listarPila = listarPila + " " + nodoAux.getValor();
                 nodoAux = nodoAux.getSiguiente();
             }
+            System.out.println(listarPila);
         }
-        System.out.println();
     }
 }

@@ -42,6 +42,8 @@ public class Main {
         pila.apilar(12);
         pila.apilar(14);
         pila.apilar(16);
+        pila.apilar(230);
+        pila.apilar(1200);
         pila.mostrarPila();
         System.out.println("TOPE ACTUAL DE LA PILA: " + pila.getTope().getValor());
         pila.desapilar();
@@ -50,6 +52,6 @@ public class Main {
         pila.desapilar();
         pila.desapilar();
         pila.desapilar();
-        System.out.println("TOPE ACTUAL DE LA PILA: " + pila.getTope());
+        System.out.println("TOPE ACTUAL DE LA PILA: " + pila.getTope().getValor());
     }
 }
