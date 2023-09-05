@@ -18,13 +18,11 @@ public class ListaEnlazadaSimple {
             cantidad++;
         } else {
             Nodo anterior = null;
-
             int indice;
             for(indice = 0; nodoAux != null && posicion > indice; ++indice) {
                 anterior = nodoAux;
                 nodoAux = nodoAux.getSiguiente();
             }
-
             if (posicion == indice) {
                 anterior.setSiguiente(nuevoNodo);
                 nuevoNodo.setSiguiente(nodoAux);

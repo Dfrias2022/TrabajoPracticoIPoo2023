@@ -18,5 +18,25 @@ public class Main {
         lista.mostrarLista();
         lista.eliminarElemento(5);
         lista.mostrarLista();
+        lista.eliminarElemento(1);
+        lista.mostrarLista();
+        lista.eliminarElemento(35);
+        lista.eliminarElemento(8);
+        lista.mostrarLista();
+        lista.eliminarElemento(1);
+        System.out.println("----LISTA ENLAZADA DOBLE----");
+        lista2.mostrarLista();
+        lista2.insertarElementoFinal(1);
+        lista2.insertarElementoFinal(2);
+        lista2.insertarElementoFinal(4);
+        lista2.insertarElementoFinal(1200);
+        lista2.insertarElementoPosicion(0,1);
+        lista2.mostrarLista();
+        lista2.eliminarElemento(1);
+        lista2.mostrarLista();
+        lista2.insertarElementoPosicion(345, 0);
+        lista2.mostrarLista();
+        lista2.eliminarElemento(1200);
+        lista2.mostrarLista();
     }
 }
