@@ -13,19 +13,20 @@ public class Main {
         String formato1 = "dd-MM-yyyy";
         String formato2 = "MM-dd-yyyy";
         Scanner ingreso = new Scanner(System.in);
-
         Fecha fecha;
+//Se ingresan 3 fechas para la comparacion
         for(int i = 0; i < 3; ++i) {
             boolean estado = false;
             fecha = null;
             int valorIngresador = 0;
-
             do {
-                System.out.println("Seleccione el formato de ingreso (1)dd-MM-yyyy (2)MM-dd-yyyy");
+                System.out.println("--SELECCIONE EL FORMATO DE INGRESO DE LA FECHA--");
+                System.out.println("(1)dd-MM-yyyy");
+                System.out.println("(2)MM-dd-yyyy");
                 if (ingreso.hasNextInt()) {
                     valorIngresador = ingreso.nextInt();
                 } else {
-                    System.out.println("El valor debe ser numerico.\n");
+                    System.out.println("El valor debe ser numerico.");
                 }
                 ingreso.nextLine();
             } while(valorIngresador != 1 && valorIngresador != 2);
@@ -39,7 +40,7 @@ public class Main {
                         estado = true;
                         fechas.add(fecha);
                     } catch (DateTimeParseException var12) {
-                        System.out.println("Error de formato de fecha ingresada por el usuario.\n");
+                        System.out.println("Error de formato de fecha ingresada por el usuario.[Formato elegido dd-MM-yyyy].");
                     }
                 } else {
                     try {
@@ -47,7 +48,7 @@ public class Main {
                         estado = true;
                         fechas.add(fecha);
                     } catch (DateTimeParseException var11) {
-                        System.out.println("Error de formato de fecha ingresada por el usuario.\n");
+                        System.out.println("Error de formato de fecha ingresada por el usuario.[Formato elegido MM-dd-yyyy]");
                     }
                 }
             } while(!estado);
